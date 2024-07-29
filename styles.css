@@ -3,7 +3,7 @@
 
 body {
     font-family: 'Proto Mono', monospace;
-    line-height: 1.6; /* Consistent line height for all text */
+    line-height: 1.6;
     margin: 0;
     padding: 0;
     background: #1d1f21; /* Dark background resembling Kali Linux terminal */
@@ -48,6 +48,7 @@ nav {
     text-align: center;
     padding: 10px 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -70,7 +71,7 @@ nav a:hover {
 
 section {
     padding: 20px;
-    margin: 20px 10%;
+    margin: 20px 5%;
     background: rgba(40, 42, 46, 0.8); /* Semi-transparent background */
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -85,48 +86,35 @@ h2 {
     margin-bottom: 20px;
 }
 
-.description-list {
-    display: flex;
-    flex-direction: column;
+footer {
+    background: rgba(40, 42, 46, 0.8); /* Semi-transparent background */
+    color: #f8f8f2;
+    text-align: center;
+    padding: 5px; /* Reduced padding for a shorter height */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    animation: fadeIn 1s ease-out;
 }
 
-.description-list p {
-    display: flex;
-    align-items: flex-start;
-    margin: 0px 0; /* Consistent margin for all text sections */
+.contact {
+    text-align: center;
 }
 
-.bullet {
-    margin-right: 10px;
-    color: #50fa7b; /* Hint of green */
-    font-size: 1.2em;
-    line-height: 1.2;
-}
-
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.contact-info p {
-    display: flex;
-    align-items: center;
+.contact p {
     margin: 10px 0;
 }
 
-.contact-info i {
-    margin-right: 10px;
-    color: #50fa7b; /* Hint of green */
+.contact a {
+    color: #50fa7b;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-footer {
-    background: rgba(40, 42, 46, 0.8); /* Semi-transparent background */
-    color: #c5c8c6;
-    padding: 10px;
-    text-align: center;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px); /* Glassmorphism effect */
+.contact a:hover {
+    text-decoration: underline;
 }
 
 @keyframes typing {
@@ -140,11 +128,55 @@ footer {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    section {
+        margin: 20px 2%;
+    }
+    
+    .header-content h1 {
+        font-size: 2em;
+    }
+    
+    .title {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    nav a {
+        padding: 8px 16px;
+    }
+    
+    header h1 {
+        font-size: 1.5em;
+    }
+    
+    .title {
+        font-size: 0.9em;
+    }
 }
