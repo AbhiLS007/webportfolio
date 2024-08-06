@@ -88,6 +88,17 @@ h2 {
 h3 {
     color: #50fa7b;
 }
+
+.description-list {
+    padding-left: 20px; /* Add left padding to align properly */
+}
+
+.description-list p {
+    margin: 0;
+    padding-left: 20px; /* Add left padding to bullet points */
+    text-indent: -20px; /* Outdent first line */
+}
+
 footer {
     background: rgba(40, 42, 46, 0.8); /* Semi-transparent background */
     color: #f8f8f2;
